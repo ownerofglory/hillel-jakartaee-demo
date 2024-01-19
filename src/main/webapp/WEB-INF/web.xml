@@ -38,5 +38,19 @@
     <listener>
         <listener-class>ua.ithillel.jee.web.listener.AppContextListener</listener-class>
     </listener>
+    
+    <error-page>
+        <location>/404.jsp</location>
+        <error-code>404</error-code>
+    </error-page>
 
+    <filter>
+        <filter-name>LoggingFilter</filter-name>
+        <filter-class>ua.ithillel.jee.web.filter.LoggingFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>LoggingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>

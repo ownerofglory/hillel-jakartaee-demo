@@ -8,6 +8,7 @@ import ua.ithillel.jee.model.Task;
 import ua.ithillel.jee.service.TaskService;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class TaskAppServlet extends HttpServlet {
@@ -24,12 +25,15 @@ public class TaskAppServlet extends HttpServlet {
         req.setAttribute("tasks", tasks);
 
         req.getRequestDispatcher("/app.jsp").include(req, resp);
+//        req.getRequestDispatcher("/app.jsp").forward(req, resp);
     }
 
 
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+
         final String params = req.getReader().readLine();
         if (params == null) {
             return;
