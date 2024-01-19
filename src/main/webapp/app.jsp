@@ -31,7 +31,7 @@
 
         </form>
         <div class="row">
-            <div class="col-6">
+            <form class="col-6" action="task" method="post">
                 <ul class="list-group">
                     <%
                         if (tasks != null) {
@@ -50,7 +50,7 @@
                         } // end if
                     %>
                 </ul>
-            </div>
+            </form>
         </div>
     </div>
 

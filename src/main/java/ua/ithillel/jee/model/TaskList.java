@@ -5,16 +5,13 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
+import java.util.List;
 
 @Data
-@EqualsAndHashCode(exclude = {"status"})
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Task {
+public class TaskList {
     @XmlElement
-    private String name;
-    @XmlElement
-    private boolean status;
+    private List<Task> tasks;
 }

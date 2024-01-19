@@ -8,6 +8,9 @@ import java.util.List;
 public class TaskInMemoryService implements TaskService {
     private List<Task> taskStorage = new ArrayList<>();
 
+    public TaskInMemoryService() {
+    }
+
     @Override
     public List<Task> getTasks() {
         return taskStorage;

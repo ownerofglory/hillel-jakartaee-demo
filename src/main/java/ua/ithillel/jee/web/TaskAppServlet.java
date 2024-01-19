@@ -32,20 +32,26 @@ public class TaskAppServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-
         final String params = req.getReader().readLine();
         if (params == null) {
             return;
         }
 
-        final String value = params.split("=")[1];
+        final String[] paramPair = params.split("=");
+        if (paramPair[0].equals("task")) {
+            final String value = paramPair[1];
 
-        final Task task = new Task();
-        task.setName(value);
+            final Task task = new Task();
+            task.setName(value);
 
-        taskService.add(task);
+            taskService.add(task);
+
+
+        } else {
+            // TODO: update task status
+        }
 
         resp.sendRedirect(req.getContextPath() + "/task");
+
     }
 }
